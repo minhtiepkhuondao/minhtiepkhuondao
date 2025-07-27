@@ -1,0 +1,386 @@
+<html lang="vi">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Giới Thiệu Nghề và Website - Minh Tiệp Khuôn Dao
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/facvicon.ico" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/facvicon.ico" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/facvicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/facvicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <style>
+   body {
+      font-family: "Roboto", sans-serif;
+    }
+    #top-link {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    #top-link.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .social-icons-container {
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      z-index: 9999999;
+    }
+    .social-icons-container a {
+      margin-bottom: 10px;
+    }
+    .social-icons-container img {
+      width: 40px;
+      height: 40px;
+    }
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    .animated-icon {
+      animation-name: bounce;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+    /* Top bar styles */
+    #top-bar {
+      background: linear-gradient(to right, #1f2937, #2d2f32, #1f2937);
+      color: #f3f4f6;
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(-16px);
+      transition: all 0.7s ease-out;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+    }
+    #top-bar .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    @media (min-width: 768px) {
+      #top-bar .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 48px;
+      }
+    }
+    #top-bar .hotline {
+      background-color: #2563eb;
+      color: white;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    #top-bar .hotline:hover {
+      background-color: #1d4ed8;
+      transform: scale(1.05);
+    }
+    #top-bar .hotline i {
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 text-gray-800 relative">
+  <div class="social-icons-container fixed bottom-24 right-6 flex flex-col gap-3 z-50">
+   <a class="animated-icon" href="tel:+84986850839" rel="noopener" target="_blank">
+    <img alt="Icon điện thoại màu xanh dương biểu tượng gọi điện thoại" height="40" src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/phone-icon.webp" width="40"/>
+   </a>
+   <a class="animated-icon" href="https://zalo.me/0986850839" rel="noopener nofollow" target="_blank">
+    <img alt="Icon zalo màu xanh dương biểu tượng ứng dụng zalo" height="40" src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/zalo-icon.webp" width="40"/>
+   </a>
+   <a class="animated-icon" href="https://m.me/xin.loi.tinh.yo.2024" rel="noopener nofollow" target="_blank">
+    <img alt="Icon messenger màu xanh dương biểu tượng ứng dụng messenger" height="40" src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/messenger-icon.webp" width="40"/>
+   </a>
+   <a class="animated-icon" href="https://www.facebook.com/xin.loi.tinh.yo.2024" rel="noopener nofollow" target="_blank">
+    <img alt="Icon facebook màu xanh dương biểu tượng fanpage facebook" height="40" src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/fb-icon.webp" width="40"/>
+   </a>
+  </div>
+  <!-- Topbar -->
+  <div id="top-bar">
+   <div class="container">
+    <div class="bar-text">
+     📦 Khuôn Dao Chặt Giầy Dép – Vali – Túi Xách – Mica
+    </div>
+    <a class="hotline" href="tel:+84986850839" rel="nofollow noopener">
+     <i class="fas fa-phone-alt">
+     </i>
+     HOTLINE: 0986 850 839
+    </a>
+   </div>
+  </div>
+  <!-- Header -->
+  <header aria-label="Primary Navigation" class="bg-white shadow-md sticky top-0 z-50" role="navigation">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between h-20">
+    <div class="flex items-center flex-shrink-0" id="logo">
+     <a class="flex items-center" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao" rel="home" title="Khuôn Dao, Khuôn Dao, Khuôn Dao Bế – Minh Tiệp">
+      <img alt="Logo Khuôn Dao Minh Tiệp" class="block w-20 h-20 object-contain" height="100" src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/logo.png" width="100"/>
+     </a>
+    </div>
+    <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
+     <a class="hover:text-blue-600 transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/About-Us.html">
+      Giới thiệu
+     </a>
+     <a class="hover:text-blue-600 transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Die-Cutter.html">
+      Khuôn Dao
+     </a>
+     <a class="hover:text-blue-600 transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Cutting-Die.html">
+      Khuôn Bế
+     </a>
+    
+     <a class="hover:text-blue-600 transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Repair.html">
+      Sửa Chữa
+     </a>
+     <a class="hover:text-blue-600 transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Contact.html">
+      Liên Hệ
+     </a>
+    </nav>
+    <div class="md:hidden flex items-center">
+     <button aria-controls="main-menu" aria-expanded="false" aria-label="Menu" class="p-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" id="mobile-menu-btn">
+      <i class="fas fa-bars text-xl">
+      </i>
+     </button>
+    </div>
+   </div>
+  </header>
+  <!-- Mobile menu -->
+  <div aria-hidden="true" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden" id="main-menu-overlay">
+  </div>
+  <nav aria-label="Main menu" class="fixed top-0 left-0 bottom-0 w-64 bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300 ease-in-out" id="main-menu">
+   <div class="flex items-center justify-between p-4 border-b border-gray-200">
+    <h2 class="text-lg font-semibold text-gray-800">
+     Menu
+    </h2>
+    <button aria-label="Close menu" class="text-gray-600 hover:text-gray-900 focus:outline-none" id="main-menu-close-btn">
+     <i class="fas fa-times text-2xl">
+     </i>
+    </button>
+   </div>
+   <ul class="flex flex-col p-4 space-y-4 text-gray-700">
+    <li>
+     <a class="block px-3 py-2 rounded hover:bg-blue-100" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/gioi-thieu/">
+      Giới thiệu
+     </a>
+    </li>
+    <li>
+     <a class="block px-3 py-2 rounded hover:bg-blue-100" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Die-Cutter.html">
+      Khuôn Dao
+     </a>
+    </li>
+    <li>
+     <a class="block px-3 py-2 rounded hover:bg-blue-100" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Cutting-Die.html">
+      Khuôn Bế
+     </a>
+    </li>
+  
+
+    <li>
+     <a class="block px-3 py-2 rounded hover:bg-blue-100" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Repair.html">
+      Sửa Chữa
+     </a>
+    </li>
+    <li>
+     <a class="block px-3 py-2 rounded hover:bg-blue-100" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Contact.html">
+      Liên Hệ
+     </a>
+    </li>
+ 
+   </ul>
+  </nav>
+  <!-- Main content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-16">
+   <section class="mb-12">
+    <h1 class="text-4xl font-bold text-blue-800 mb-6 text-center">
+     Giới Thiệu Nghề Khuôn Dao và Website Minh Tiệp
+    </h1>
+    <div class="flex flex-col md:flex-row md:space-x-12 items-center">
+     <div class="md:w-1/2 mb-8 md:mb-0">
+      <img alt="Hình ảnh công nhân đang gia công khuôn dao trong nhà máy hiện đại" class="rounded-lg shadow-lg w-full object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/0fe8f238-f0df-47a5-5bde-17db283b0aff.jpg" width="600"/>
+     </div>
+     <div class="md:w-1/2 text-gray-700 text-lg space-y-4">
+      <p>
+       <strong>Nghề khuôn dao</strong> là một ngành nghề kỹ thuật quan trọng trong sản xuất công nghiệp, đặc biệt trong các lĩnh vực như sản xuất giày dép, túi xách, vali, và các sản phẩm mica. Công việc chính của nghề này là thiết kế, gia công và chế tạo các loại khuôn dao, khuôn bế, khuôn dập nhằm tạo ra các chi tiết sản phẩm với độ chính xác cao và hiệu quả sản xuất tối ưu.
+      </p>
+      <p>
+       Nghề khuôn dao đòi hỏi sự tỉ mỉ, kỹ năng cao và kinh nghiệm lâu năm để đảm bảo các khuôn dao có độ bền, độ sắc nét và phù hợp với yêu cầu sản xuất. Đây là một nghề truyền thống nhưng luôn được cập nhật với công nghệ hiện đại để đáp ứng nhu cầu ngày càng cao của thị trường.
+      </p>
+      <p>
+       <strong>Website Minh Tiệp Khuôn Dao</strong> được xây dựng nhằm giới thiệu về sản phẩm, dịch vụ và kinh nghiệm của công ty trong lĩnh vực khuôn dao. Website cung cấp thông tin chi tiết về các loại khuôn dao, khuôn bế, vật tư thiết bị, cũng như các mẫu khuôn đã thực hiện. Ngoài ra, website còn hỗ trợ khách hàng liên hệ, tư vấn và đặt hàng một cách thuận tiện và nhanh chóng.
+      </p>
+      <p>
+       Chúng tôi cam kết mang đến cho khách hàng những sản phẩm chất lượng cao, dịch vụ tận tâm và giải pháp tối ưu nhất cho nhu cầu sản xuất của bạn.
+      </p>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- Footer -->
+  <footer aria-label="Footer" class="bg-gray-900 text-gray-300 mt-16" id="footer">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+     <h3 class="text-white font-semibold mb-3 text-lg">
+      CÔNG TY TNHH TM DV KHUÔN MẪU NHÂN HƯNG
+     </h3>
+     <hr class="border-gray-700 mb-4"/>
+     <ul class="space-y-2 text-sm">
+      <li class="flex items-start space-x-2">
+       <i class="fas fa-home mt-1">
+       </i>
+       <span>
+        240 Thôn Thần, Xã Ứng Hoà, Hà Nội
+       </span>
+      </li>
+      <li class="flex items-center space-x-2">
+       <i class="fas fa-phone-alt">
+       </i>
+       <span>
+        Hotline: 0986 850 839
+       </span>
+      </li>
+      <li class="flex items-center space-x-2">
+       <i class="fas fa-envelope">
+       </i>
+       <span>
+        Email: Tranductiep23986@gmail.com
+       </span>
+      </li>
+     </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold mb-3 text-lg">
+      THÔNG TIN DỊCH VỤ
+     </h3>
+     <hr class="border-gray-700 mb-4"/>
+     <ul class="space-y-2 text-sm">
+      <li>
+       <a class="hover:text-white transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Cutting-Die.html">
+        Khuôn Bế
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-white transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Die-Cutter.html">
+        Khuôn Dao
+       </a>
+      </li>
+    
+      <li>
+       <a class="hover:text-white transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Repair.html">
+        Sửa Chữa
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-white transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/About-Us.html">
+        Giới thiệu
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-white transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Contact.html">
+        Liên hệ
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-white transition" href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Policy.html">
+        Chính sách bảo mật
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <img alt="Logo phụ Minh Tiệp Khuôn Dao màu xanh dương trên nền trắng" class="mx-auto max-w-full h-auto" src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/logo%20bu.png"/>
+    </div>
+   </div>
+   <div aria-label="Copyright" class="bg-gray-800 text-gray-400 text-center py-4 text-sm">
+    Copyright 2025 ©
+    <strong>
+     Minh Tiệp Khuôn Dao
+    </strong>
+   </div>
+   <a aria-label="Go to top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" href="#top" id="top-link">
+    <i class="fas fa-angle-up">
+    </i>
+   </a>
+  </footer>
+  <script>
+   // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mainMenu = document.getElementById("main-menu");
+    const mainMenuOverlay = document.getElementById("main-menu-overlay");
+    const mainMenuCloseBtn = document.getElementById("main-menu-close-btn");
+
+    function openMenu() {
+      mainMenu.classList.remove("-translate-x-full");
+      mainMenuOverlay.classList.remove("hidden");
+      mobileMenuBtn.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMenu() {
+      mainMenu.classList.add("-translate-x-full");
+      mainMenuOverlay.classList.add("hidden");
+      mobileMenuBtn.setAttribute("aria-expanded", "false");
+    }
+
+    mobileMenuBtn.addEventListener("click", openMenu);
+    mainMenuCloseBtn.addEventListener("click", closeMenu);
+    mainMenuOverlay.addEventListener("click", closeMenu);
+
+    // Scroll to top button
+    const topLink = document.getElementById("top-link");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200) {
+        topLink.classList.add("show");
+      } else {
+        topLink.classList.remove("show");
+      }
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const topBar = document.getElementById("top-bar");
+      setTimeout(() => {
+        topBar.style.opacity = "1";
+        topBar.style.transform = "translateY(0)";
+      }, 300);
+    });
+  </script>
+ </body>
+</html>
