@@ -14,41 +14,149 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap"
     rel="stylesheet"
   />
+  <link href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/facvicon.ico" rel="apple-touch-icon" sizes="120x120">
+<link href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/facvicon.ico" rel="apple-touch-icon" sizes="152x152">
+<link href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/facvicon.ico" rel="icon" type="image/x-icon">
+<link href="https://minhtiepkhuondao.github.io/minhtiepkhuondao/facvicon.ico" rel="shortcut icon" type="image/x-icon">
   <style>
     body {
       font-family: "Roboto", sans-serif;
     }
+    #top-link {
+
+     opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  html {
+  scroll-behavior: smooth;
+}
+
+
+#top-link.show {
+  opacity: 1;
+  visibility: visible;
+}
+.social-icons-container {
+  position:fixed;bottom:70px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  z-index:9999999
+}
+.social-icons-container a {
+  margin-bottom:10px;
+}
+.social-icons-container img { 
+  width:40px;
+  height:40px
+}
+@keyframes bounce{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+.animated-icon{
+  animation-name:bounce;
+  animation-duration:1s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite
+}
+ /* Toàn bộ thanh top bar */
+  #top-bar {
+    background: linear-gradient(to right, #1f2937, #2d2f32, #1f2937); /* Gradient xám đậm */
+    color: #f3f4f6; /* Màu xám sáng */
+    font-size: 15px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(-16px);
+    transition: all 0.7s ease-out;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+  }
+
+  /* Container chính */
+  #top-bar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    #top-bar .container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 48px;
+    }
+  }
+
+  /* Nút hotline */
+  #top-bar .hotline {
+    background-color: #2563eb; /* blue-600 */
+    color: white;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  #top-bar .hotline:hover {
+    background-color: #1d4ed8; /* blue-700 */
+    transform: scale(1.05);
+  }
+
+  /* Icon rung nhẹ */
+  #top-bar .hotline i {
+    animation: pulse 1.2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
   </style>
 </head>
+<div class="social-icons-container fixed bottom-24 right-6 flex flex-col gap-3 z-50">
+  <a class="animated-icon" href="tel:+84986850839" target="_blank" rel="noopener">
+    <img width="40" height="40" src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/phone-icon.webp" alt="Gọi điện">
+  </a>
+  <a class="animated-icon" href="https://zalo.me/0986850839" target="_blank" rel="noopener nofollow">
+    <img width="40" height="40" src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/zalo-icon.webp" alt="Zalo">
+  </a>
+  <a class="animated-icon" href="https://m.me/xin.loi.tinh.yo.2024" target="_blank" rel="noopener nofollow">
+    <img width="40" height="40" src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/messenger-icon.webp" alt="Messenger">
+  </a>
+  <a class="animated-icon" href="https://www.facebook.com/xin.loi.tinh.yo.2024" target="_blank" rel="noopener nofollow">
+    <img width="40" height="40" src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/fb-icon.webp" alt="Fanpage">
+  </a>
+</div>
+
 <body class="bg-gray-50 text-gray-800 relative">
   <!-- Topbar with hotline and slogan -->
-  <div class="bg-gray-900 text-gray-200 text-sm">
-    <div
-      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between h-10"
-    >
-      <div class="hidden md:flex md:flex-1 md:justify-start">
-        <span
-          >Khuôn Dao - Khuôn Dao Chặt Giầy Dép – Vali – Túi Xách – Mica</span
-        >
-      </div>
-      <div class="flex justify-center md:hidden w-full py-1">
-        <span
-          >Khuôn Dao - Khuôn Dao Chặt Giầy Dép – Vali – Túi Xách – Mica</span
-        >
-      </div>
-      <div class="hidden md:flex md:flex-1 md:justify-end">
-        <a
-          class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 py-1 rounded-lg"
-          href="tel:+84986850839"
-          rel="nofollow noopener"
-          target="_self"
-        >
-          <span class="mr-2">HOTLINE: 0986 850 839</span>
-          <i class="fas fa-phone-alt"></i>
-        </a>
-      </div>
+ <div id="top-bar">
+  <div class="container">
+    <!-- Left Text (PC), Center (Mobile) -->
+    <div class="bar-text">
+      📦 Khuôn Dao Chặt Giầy Dép – Vali – Túi Xách – Mica
     </div>
+
+    <!-- Hotline Button -->
+    <a class="hotline" href="tel:+84986850839" rel="nofollow noopener">
+      <i class="fas fa-phone-alt"></i> HOTLINE: 0986 850 839
+    </a>
   </div>
+</div>
+
   <!-- Header with logo and navigation -->
   <header
     class="bg-white shadow-md sticky top-0 z-50"
@@ -61,25 +169,19 @@
       <!-- Logo -->
       <div id="logo" class="flex items-center flex-shrink-0">
         <a
-          href="https://khuonmaunhanhung.com/"
-          title="Khuôn Dao, Khuôn Dao Dập, Khuôn Dao Bế – Minh Tiệp - Khuôn Dao, Khuôn Dao Dập, Khuôn Dao Bế – Minh Tiệp"
+          href="https://minhtiepkhuondao.github.io/minhtiepkhuondao"
+          title="Khuôn Dao, Khuôn Dao, Khuôn Dao Bế – Minh Tiệp - Khuôn Dao, Khuôn Dao, Khuôn Dao Bế – Minh Tiệp"
           rel="home"
           class="flex items-center"
         >
           <img
-            alt="Khuôn Dao, Khuôn Dao Dập, Khuôn Dao Bế – Minh Tiệp"
+            alt="Khuôn Dao, Khuôn Dao, Khuôn Dao Bế – Minh Tiệp"
             class="block w-20 h-20 object-contain"
             height="100"
-            src="https://blogger.googleusercontent.com/img/a/AVvXsEjIKTrAfpsodpeC-5a5a54CXjuYO20r7gPAGjeHf3Hf6LmAAo8lKe6Sc9sgcqouRq0gQrxswFFewSoFh6Z_B_MLA73OqRMR8nKd5Caji7Db3Z7M18HvdLF0hGgS_YP9wFhfuHNoNz6PzOlFGGCDf1UkQx1h4ZjnamiMHt9KdxxiERpdVPZ50rpPLFmF3mgH=s1024"
+            src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/logo.png"
             width="100"
           />
-          <img
-            alt="Khuôn Dao, Khuôn Dao Dập, Khuôn Dao Bế – Minh Tiệp"
-            class="hidden dark:block w-20 h-20 object-contain"
-            height="100"
-            src="https://khuonmaunhanhung.com/wp-content/uploads/2024/10/Khuon-mau-nhan-hung-logo-facvicon-100.png"
-            width="100"
-          />
+          
         </a>
       </div>
       <!-- Mobile Left Elements -->
@@ -157,13 +259,7 @@
               >Liên Hệ</a
             >
           </li>
-          <li>
-            <a
-              class="nav-top-link hover:text-blue-600 transition font-semibold"
-              href="https://khuonmaunhanhung.com/blog/"
-              >BLOG</a
-            >
-          </li>
+         
         </ul>
       </div>
       <!-- Mobile Right Elements -->
@@ -202,7 +298,7 @@
                 class="searchform-wrapper ux-search-box relative form-flat is-large bg-white rounded-lg p-6 max-w-lg mx-auto"
               >
                 <form
-                  action="https://khuonmaunhanhung.com/"
+                  action="https://minhtiepkhuondao.github.io/minhtiepkhuondao"
                   class="searchform"
                   method="get"
                   role="search"
@@ -243,7 +339,7 @@
   </header>
   <!-- Banner site 1 -->
  <section class='relative w-full max-w-[938px] h-[473px] mx-auto'>
-<img alt='Hình ảnh khuôn dao chặt giầy dép vali túi xách mica chất lượng cao, sắc nét, đặt trên bàn làm việc trong nhà máy với lớp phủ mờ đen nhẹ' class='absolute inset-0 w-full h-full object-cover rounded-xl shadow-2xl border-4 border-white' height='473' src='https://blogger.googleusercontent.com/img/a/AVvXsEgdF9gmtMzI4JqYemgVa2n2mtd87f5zBThuRwUqHizZE7BXYt26fK7pyK2Jn8nWsYtpTcYFjrFx_OWqlOO8YB1a0oZEnGIJmKKr5GnXAxchx2Sm-Hlqn_6EzHXXGK6dzE_MeQxOcRbAxG4RTlf33xavczI5QBlOs6NoRaLPVQ_BlVNMNk_XJdlvW6NcQQQc=s938' width='938'/>
+<img alt='Hình ảnh khuôn dao chặt giầy dép vali túi xách mica chất lượng cao, sắc nét, đặt trên bàn làm việc trong nhà máy với lớp phủ mờ đen nhẹ' class='absolute inset-0 w-full h-full object-cover rounded-xl shadow-2xl border-4 border-white' height='473' src='https://minhtiepkhuondao.github.io/minhtiepkhuondao/banner.jpg' width='938'/>
 
 <div class='absolute inset-0 flex flex-col justify-center items-center text-center px-4'>
 <!-- Bạn có thể chèn nội dung ở đây -->
@@ -251,6 +347,8 @@
 </section>
   <!-- Section content below banner -->
   <section
+   id="intro-section"
+  class="section-content relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 opacity-0 translate-y-8 transition-all duration-1000 ease-out"
     class="section-content relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12"
   >
     <div
@@ -276,12 +374,12 @@
                 fetchpriority="high"
                 height="1000"
                 sizes="(max-width: 1000px) 100vw, 1000px"
-                src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Nhan-Hung.jpg"
+                src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Dao-Minh-Tiep.jpg"
                 srcset="
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Nhan-Hung.jpg 1000w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Nhan-Hung-300x300.jpg 300w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Nhan-Hung-150x150.jpg 150w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Nhan-Hung-768x768.jpg 768w
+                  https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Dao-Minh-Tiep.jpg 1000w,
+                  https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Dao-Minh-Tiep-300x300.jpg 300w,
+                  https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Dao-Minh-Tiep-150x150.jpg 150w,
+                  https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Dao-Minh-Tiep-768x768.jpg 768w
                 "
                 width="1000"
               />
@@ -295,10 +393,10 @@
       >
         <div class="col-inner text-left">
           <h1 class="text-3xl font-bold mb-4">
-            <strong>Khuôn Dao Dập, Khuôn Bế, Khuôn Mẫu Minh Tiệp</strong>
+            <strong>Khuôn Dao - Khuôn Dao Chặt Giầy Dép – Vali – Túi Xách – Mica Minh Tiệp</strong>
           </h1>
           <p class="mb-4">
-            <strong>Khuôn Dao Dập, Khuôn Mẫu Minh Tiệp</strong> là doanh nghiệp
+            <strong>Khuôn Dao, Khuôn Mẫu Minh Tiệp</strong> là doanh nghiệp
             chuyên về lĩnh vực thiết kế, gia công và chế tạo các loại khuôn
             mẫu dập, khuôn bế, khuôn nhựa,… cho các ngành công nghiệp khác
             nhau.
@@ -350,16 +448,16 @@
             <div class="box-image rounded-lg overflow-hidden mb-4">
               <a href="https://khuonmaunhanhung.com/khuondao/">
                 <img
-                  alt="Khuôn dao dập sắc nét, đặt trên bàn làm việc trong nhà máy sản xuất khuôn mẫu"
+                  alt="Khuôn Dao sắc nét, đặt trên bàn làm việc trong nhà máy sản xuất khuôn mẫu"
                   class="w-full h-auto object-cover"
                   decoding="async"
                   height="720"
                   sizes="(max-width: 960px) 100vw, 960px"
-                  src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/khuon-dao-dap.webp"
+                  src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/khuon-dao-dap.webp"
                   srcset="
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/khuon-dao-dap.webp 960w,
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/khuon-dao-dap-300x225.webp 300w,
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/khuon-dao-dap-768x576.webp 768w
+                    https://minhtiepkhuondao.github.io/minhtiepkhuondao/khuon-dao-dap.webp 960w,
+                   https://minhtiepkhuondao.github.io/minhtiepkhuondao/khuon-dao-dap.webp 300w,
+              https://minhtiepkhuondao.github.io/minhtiepkhuondao/khuon-dao-dap.webp 768w
                   "
                   width="960"
                 />
@@ -392,12 +490,12 @@
                   decoding="async"
                   height="1000"
                   sizes="(max-width: 1000px) 100vw, 1000px"
-                  src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-be-go-khuon-mau-nhan-hung.jpg"
+                  src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/khuon-dao-dap.webp"
                   srcset="
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-be-go-khuon-mau-nhan-hung.jpg 1000w,
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-be-go-khuon-mau-nhan-hung-300x300.jpg 300w,
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-be-go-khuon-mau-nhan-hung-150x150.jpg 150w,
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-be-go-khuon-mau-nhan-hung-768x768.jpg 768w
+                    https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-be-go-khuon-mau-minh-tiep.jpg 1000w,
+                    https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-be-go-khuon-mau-minh-tiep.jpg-300x300.jpg 300w,
+                    https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-be-go-khuon-mau-minh-tiep.jpg-150x150.jpg 150w,
+                    https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-be-go-khuon-mau-minh-tiep.jpg-768x768.jpg 768w
                   "
                   width="1000"
                 />
@@ -416,45 +514,7 @@
             </div>
           </div>
         </div>
-        <div class="col-inner bg-white rounded-lg shadow p-6">
-          <h2 class="text-center underline text-black text-sm mb-4">
-            Vật tư thiết bị
-          </h2>
-          <p class="mb-4 text-gray-700 text-sm">
-            Cung cấp vật tư thiết bị máy móc cần thiết để sản xuất cho ngành ví bóp, ba lô, túi xách, giày dép, thú nhồi bông…..
-          </p>
-          <div class="box has-hover box-text-bottom">
-            <div class="box-image rounded-lg overflow-hidden mb-4">
-              <a href="https://khuonmaunhanhung.com/vat-tu/">
-                <img
-                  alt="Máy móc thiết bị ngành da hiện đại, đặt trong nhà máy sản xuất khuôn mẫu"
-                  class="w-full h-auto object-cover"
-                  decoding="async"
-                  height="1000"
-                  sizes="auto, (max-width: 1000px) 100vw, 1000px"
-                  src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/may-moc-thiet-bi-nganh-da.jpg"
-                  srcset="
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/may-moc-thiet-bi-nganh-da.jpg 1000w,
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/may-moc-thiet-bi-nganh-da-300x300.jpg 300w,
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/may-moc-thiet-bi-nganh-da-150x150.jpg 150w,
-                    https://khuonmaunhanhung.com/wp-content/uploads/2024/06/may-moc-thiet-bi-nganh-da-768x768.jpg 768w
-                  "
-                  width="1000"
-                />
-              </a>
-            </div>
-            <div class="box-text text-center">
-              <div class="box-text-inner">
-                <a
-                  href="https://khuonmaunhanhung.com/vat-tu/"
-                  target="_self"
-                  class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition"
-                  style="border-radius: 17px"
-                  ><span>Xem thêm</span></a
-                >
-              </div>
-            </div>
-          </div>
+        
         </div>
       </div>
     </div>
@@ -491,12 +551,12 @@
                       loading="lazy"
                       height="1000"
                       sizes="auto, (max-width: 1000px) 100vw, 1000px"
-                      src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Khuon-Day-Dep-1.jpg"
+                      src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Dao-Khuon-Day-Dep-1.jpg"
                       srcset="
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Khuon-Day-Dep-1.jpg 1000w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Khuon-Day-Dep-1-300x300.jpg 300w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Khuon-Day-Dep-1-150x150.jpg 150w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Khuon-Day-Dep-1-768x768.jpg 768w
+                        https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Dao-Khuon-Day-Dep-1.jpg 1000w,
+                        https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Dao-Khuon-Day-Dep-1.jpg 300w,
+                        https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Dao-Khuon-Day-Dep-1-150x150.jpg 150w,
+                        https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Dao-Khuon-Day-Dep-1-768x768.jpg 768w
                       "
                       width="1000"
                     />
@@ -504,7 +564,7 @@
                   <div class="box-text text-center">
                     <div class="box-text-inner">
                       <h4 class="text-lg font-semibold mb-1">
-                        Khuôn Dao – Khuôn Dày Dép
+                        Khuôn Dao – Khuôn Giầy Dép
                       </h4>
                       <p>⭐⭐⭐⭐⭐</p>
                     </div>
@@ -525,12 +585,12 @@
                       loading="lazy"
                       height="1000"
                       sizes="auto, (max-width: 1000px) 100vw, 1000px"
-                      src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Khuon-Day-Dep-2.jpg"
+                      src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Be-Go-1.jpg"
                       srcset="
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Khuon-Day-Dep-2.jpg 1000w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Khuon-Day-Dep-2-300x300.jpg 300w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Khuon-Day-Dep-2-150x150.jpg 150w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dao-Khuon-Day-Dep-2-768x768.jpg 768w
+                       https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Be-Go-1.jpg 1000w,
+                       https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Be-Go-1 300x300.jpg 300w,
+                    https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Be-Go-1 150x150.jpg 150w,
+                     https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-Be-Go-1 768x768.jpg 768w
                       "
                       width="1000"
                     />
@@ -538,7 +598,7 @@
                   <div class="box-text text-center">
                     <div class="box-text-inner">
                       <h4 class="text-lg font-semibold mb-1">
-                        Khuôn Dao – Khuôn Dày Dép
+                        Khuôn Bế Gỗ
                       </h4>
                       <p>⭐⭐⭐⭐⭐</p>
                     </div>
@@ -559,121 +619,28 @@
                       loading="lazy"
                       height="1000"
                       sizes="auto, (max-width: 1000px) 100vw, 1000px"
-                      src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dap-Da.jpg"
+                      src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-be-go-khuon-mau-minh-tiep.jpg"
                       srcset="
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dap-Da.jpg 1000w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dap-Da-300x300.jpg 300w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dap-Da-150x150.jpg 150w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dap-Da-768x768.jpg 768w
+                         https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-be-go-khuon-mau-minh-tiep.jpg 1000w,
+                    https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-be-go-khuon-mau-minh-tiep.jpg-300x300.jpg 300w,
+                    https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-be-go-khuon-mau-minh-tiep.jpg-150x150.jpg 150w,
+                    https://minhtiepkhuondao.github.io/minhtiepkhuondao/Khuon-be-go-khuon-mau-minh-tiep.jpg-768x768.jpg 768w
                       "
                       width="1000"
                     />
                   </div>
                   <div class="box-text text-center">
                     <div class="box-text-inner">
-                      <h4 class="text-lg font-semibold mb-1">Khuôn Dập Da</h4>
+                      <h4 class="text-lg font-semibold mb-1">Khuôn Bé Mica</h4>
                       <p>⭐⭐⭐⭐⭐</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div id="col-1919436212" class="col medium-4 small-12 large-4">
-              <div class="col-inner">
-                <div
-                  class="box has-hover box-text-bottom bg-white rounded-lg shadow p-4"
-                >
-                  <div class="box-image rounded-lg overflow-hidden mb-4">
-                    <img
-                      alt="Khuôn Bế Mica, hình ảnh khuôn bế mica sắc nét trên bàn làm việc"
-                      class="w-full h-auto object-cover"
-                      decoding="async"
-                      loading="lazy"
-                      height="1000"
-                      sizes="auto, (max-width: 1000px) 100vw, 1000px"
-                      src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/KHUON-BE-MICA.jpg"
-                      srcset="
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/KHUON-BE-MICA.jpg 1000w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/KHUON-BE-MICA-300x300.jpg 300w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/KHUON-BE-MICA-150x150.jpg 150w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/KHUON-BE-MICA-768x768.jpg 768w
-                      "
-                      width="1000"
-                    />
-                  </div>
-                  <div class="box-text text-center">
-                    <div class="box-text-inner">
-                      <h4 class="text-lg font-semibold mb-1">Khuôn Bế Mica</h4>
-                      <p>⭐⭐⭐⭐⭐</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="col-1462247886" class="col medium-4 small-12 large-4">
-              <div class="col-inner">
-                <div
-                  class="box has-hover box-text-bottom bg-white rounded-lg shadow p-4"
-                >
-                  <div class="box-image rounded-lg overflow-hidden mb-4">
-                    <img
-                      alt="Khuôn Bế Gỗ, hình ảnh khuôn bế gỗ sắc nét trên bàn làm việc"
-                      class="w-full h-auto object-cover"
-                      decoding="async"
-                      loading="lazy"
-                      height="1000"
-                      sizes="auto, (max-width: 1000px) 100vw, 1000px"
-                      src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Be-Go.jpg"
-                      srcset="
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Be-Go.jpg 1000w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Be-Go-300x300.jpg 300w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Be-Go-150x150.jpg 150w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Be-Go-768x768.jpg 768w
-                      "
-                      width="1000"
-                    />
-                  </div>
-                  <div class="box-text text-center">
-                    <div class="box-text-inner">
-                      <h4 class="text-lg font-semibold mb-1">Khuôn Bế Gỗ</h4>
-                      <p>⭐⭐⭐⭐⭐</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="col-897541881" class="col medium-4 small-12 large-4">
-              <div class="col-inner">
-                <div
-                  class="box has-hover box-text-bottom bg-white rounded-lg shadow p-4"
-                >
-                  <div class="box-image rounded-lg overflow-hidden mb-4">
-                    <img
-                      alt="Khuôn dao dập các loại, hình ảnh khuôn dao dập sắc nét trên bàn làm việc"
-                      class="w-full h-auto object-cover"
-                      decoding="async"
-                      loading="lazy"
-                      height="973"
-                      sizes="auto, (max-width: 973px) 100vw, 973px"
-                      src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-dao-dap-cac-loai.jpg"
-                      srcset="
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-dao-dap-cac-loai.jpg 973w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-dao-dap-cac-loai-300x300.jpg 300w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-dao-dap-cac-loai-150x150.jpg 150w,
-                        https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-dao-dap-cac-loai-768x768.jpg 768w
-                      "
-                      width="973"
-                    />
-                  </div>
-                  <div class="box-text text-center">
-                    <div class="box-text-inner">
-                      <h4 class="text-lg font-semibold mb-1">
-                        Khuôn Dao Dập, Cắt các loại
-                      </h4>
-                      <p>⭐⭐⭐⭐⭐</p>
-                    </div>
-                  </div>
-                </div>
+           
+         
+              
               </div>
             </div>
           </div>
@@ -682,257 +649,96 @@
     </div>
   </section>
   <!-- Section BLOG -->
-  <section
-    class="section py-12 relative"
-    id="section_381838794"
-    aria-label="BLOG"
-  >
-    <img
-      alt="Nền ảnh văn phòng làm việc hiện đại với ánh sáng tự nhiên cho phần blog"
-      src="https://khuonmaunhanhung.com/wp-content/uploads/2024/03/bg_about.jpg"
-      class="absolute inset-0 w-full h-full object-cover -z-10 opacity-20"
-      aria-hidden="true"
-    />
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="container section-title-container mb-12">
-        <h2
-          class="section-title section-title-center text-3xl font-bold text-center text-blue-800"
-        >
-          <span class="section-title-main">BLOG</span>
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <article
-          class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition"
-        >
-          <a href="https://khuonmaunhanhung.com/lam-khuon-dao-giay-theo-yeu-cau/" class="block">
-            <div class="relative pb-[56.25%] overflow-hidden">
-              <img
-                alt="Làm Khuôn Dao Giày Theo Yêu Cầu, hình ảnh khuôn dao giày sắc nét"
-                class="absolute inset-0 w-full h-full object-cover"
-                decoding="async"
-                loading="lazy"
-                src="https://khuonmaunhanhung.com/wp-content/uploads/2025/07/Lam-Khuon-Dao-Giay-Theo-Yeu-Cau-300x200.jpg"
-                width="300"
-                height="200"
-                srcset="
-                  https://khuonmaunhanhung.com/wp-content/uploads/2025/07/Lam-Khuon-Dao-Giay-Theo-Yeu-Cau-300x200.jpg 300w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2025/07/Lam-Khuon-Dao-Giay-Theo-Yeu-Cau-768x511.jpg 768w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2025/07/Lam-Khuon-Dao-Giay-Theo-Yeu-Cau.jpg 1000w
-                "
-                sizes="(max-width: 300px) 100vw, 300px"
-              />
-            </div>
-            <div class="p-4 text-center">
-              <h3 class="text-lg font-semibold mb-2">
-                Làm Khuôn Dao Giày Theo Yêu Cầu – Minh Tiệp
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Tôi viết bài này như một khách hàng thật sự đã tự mình đi tìm, [...]
-              </p>
-              <time class="block mt-2 text-xs text-gray-400">04 Th7</time>
-            </div>
-          </a>
-        </article>
-        <article
-          class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition"
-        >
-          <a href="https://khuonmaunhanhung.com/khuon-dao-chat/" class="block">
-            <div class="relative pb-[56.25%] overflow-hidden">
-              <img
-                alt="Khuôn Dao Chặt - khuonmaunhanhung, hình ảnh khuôn dao chặt sắc nét"
-                class="absolute inset-0 w-full h-full object-cover"
-                decoding="async"
-                loading="lazy"
-                src="https://khuonmaunhanhung.com/wp-content/uploads/2025/03/Khuon-Dao-Chat-300x190.jpg"
-                width="300"
-                height="190"
-                srcset="
-                  https://khuonmaunhanhung.com/wp-content/uploads/2025/03/Khuon-Dao-Chat-300x190.jpg 300w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2025/03/Khuon-Dao-Chat-768x486.jpg 768w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2025/03/Khuon-Dao-Chat.jpg 1000w
-                "
-                sizes="(max-width: 300px) 100vw, 300px"
-              />
-            </div>
-            <div class="p-4 text-center">
-              <h3 class="text-lg font-semibold mb-2">
-                Khuôn Dao Chặt – Giải Pháp Tối Ưu Cho Ngành Gia Công Cơ Khí Hiện Đại
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Bạn đã bao giờ tự hỏi: “Làm thế nào để sản xuất các chi tiết [...]
-              </p>
-              <time class="block mt-2 text-xs text-gray-400">15 Th3</time>
-            </div>
-          </a>
-        </article>
-        <article
-          class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition"
-        >
-          <a href="https://khuonmaunhanhung.com/khuon-dao-dap/" class="block">
-            <div class="relative pb-[56.25%] overflow-hidden">
-              <img
-                alt="Khuôn Dao Dập, Dao Cắt, Dao Chặt, hình ảnh khuôn dao dập sắc nét"
-                class="absolute inset-0 w-full h-full object-cover"
-                decoding="async"
-                loading="lazy"
-                src="https://khuonmaunhanhung.com/wp-content/uploads/2024/08/Khuon-dao-dap-300x183.jpg"
-                width="300"
-                height="183"
-                srcset="
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/08/Khuon-dao-dap-300x183.jpg 300w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/08/Khuon-dao-dap-768x469.jpg 768w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/08/Khuon-dao-dap.jpg 1000w
-                "
-                sizes="(max-width: 300px) 100vw, 300px"
-              />
-            </div>
-            <div class="p-4 text-center">
-              <h3 class="text-lg font-semibold mb-2">Khuôn Dao Dập, Dao Cắt, Dao Chặt</h3>
-              <p class="text-gray-600 text-sm">
-                Khi cần chọn khuôn dao dập, việc nắm vững các loại khuôn và ứng dụng [...]
-              </p>
-              <time class="block mt-2 text-xs text-gray-400">15 Th3</time>
-            </div>
-          </a>
-        </article>
-        <article
-          class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition"
-        >
-          <a href="https://khuonmaunhanhung.com/gioi-thieu/" class="block">
-            <div class="p-4 text-center">
-              <h3 class="text-lg font-semibold mb-2">
-                Công ty TNHH Thương Mại Dịch Vụ Khuôn Mẫu Minh Tiệp
-              </h3>
-              <div class="text-xs text-gray-400 mb-2">Tháng 6 29, 2024</div>
-              <p class="text-gray-600 text-sm">
-                Công ty TNHH Thương Mại Dịch Vụ Khuôn Mẫu Minh Tiệp Kính gửi Quý khách [...]
-              </p>
-            </div>
-          </a>
-        </article>
-        <article
-          class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition"
-        >
-          <a href="https://khuonmaunhanhung.com/khuon-dap-cat/" class="block">
-            <div class="relative pb-[100%] overflow-hidden">
-              <img
-                alt="Khuôn Dập Cắt, hình ảnh khuôn dập cắt sắc nét"
-                class="absolute inset-0 w-full h-full object-cover"
-                decoding="async"
-                loading="lazy"
-                src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dap-Da-300x300.jpg"
-                width="300"
-                height="300"
-                srcset="
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dap-Da-300x300.jpg 300w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dap-Da-150x150.jpg 150w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dap-Da-768x768.jpg 768w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/Khuon-Dap-Da.jpg 1000w
-                "
-                sizes="(max-width: 300px) 100vw, 300px"
-              />
-            </div>
-            <div class="p-4 text-center">
-              <h3 class="text-lg font-semibold mb-2">Khuôn Dập Cắt</h3>
-              <p class="text-gray-600 text-sm">[...]</p>
-              <time class="block mt-2 text-xs text-gray-400">29 Th6</time>
-            </div>
-          </a>
-        </article>
-        <article
-          class="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition"
-        >
-          <a href="https://khuonmaunhanhung.com/khuon-dap-lo/" class="block">
-            <div class="relative pb-[48.33%] overflow-hidden">
-              <img
-                alt="TEST 3, hình ảnh khuôn dập lỗ sắc nét"
-                class="absolute inset-0 w-full h-full object-cover"
-                decoding="async"
-                loading="lazy"
-                src="https://khuonmaunhanhung.com/wp-content/uploads/2024/06/TEST-3-300x145.jpg"
-                width="300"
-                height="145"
-                srcset="
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/TEST-3-300x145.jpg 300w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/TEST-3-768x372.jpg 768w,
-                  https://khuonmaunhanhung.com/wp-content/uploads/2024/06/TEST-3.jpg 1000w
-                "
-                sizes="(max-width: 300px) 100vw, 300px"
-              />
-            </div>
-            <div class="p-4 text-center">
-              <h3 class="text-lg font-semibold mb-2">Khuôn Dập Lỗ</h3>
-              <p class="text-gray-600 text-sm">[...]</p>
-              <time class="block mt-2 text-xs text-gray-400">29 Th6</time>
-            </div>
-          </a>
-        </article>
-      </div>
-    </div>
-  </section>
+ 
   <!-- Contact Section -->
   <section
-    class="mt-16 bg-blue-600 rounded-lg p-8 text-white text-center max-w-4xl mx-auto"
-    id="contact"
-    aria-label="Liên Hệ Với Minh Tiệp Khuôn Dao"
+  class="mt-16 bg-blue-600 rounded-lg p-8 text-white text-center max-w-4xl mx-auto shadow-lg"
+  id="contact"
+  aria-label="Liên Hệ Với Minh Tiệp Khuôn Dao"
+>
+  <h3 class="text-3xl font-bold mb-4">Liên Hệ Với Minh Tiệp Khuôn Dao</h3>
+  <p class="mb-6 text-lg">
+    Hotline:
+    <a class="underline font-semibold" href="tel:0986850839">0986 850 839</a>
+    (Phục vụ 24/7)
+  </p>
+
+  <form
+    action="https://formspree.io/f/mblkoepw"  
+    method="POST"
+    class="max-w-xl mx-auto space-y-6 text-left"
   >
-    <h3 class="text-2xl font-bold mb-4">Liên Hệ Với Minh Tiệp Khuôn Dao</h3>
-    <p class="mb-6 text-lg">
-      Hotline:
-      <a class="underline font-semibold" href="tel:0986850839">0986 850 839</a>
-      (Phục vụ 24/7)
-    </p>
-    <form
-      action="mailto:contact@khuondaochet.com"
-      class="max-w-xl mx-auto space-y-6 text-left"
-      enctype="text/plain"
-      method="POST"
-      aria-label="Form liên hệ"
-    >
-      <div>
-        <label class="block mb-1 font-semibold" for="name">Họ và Tên</label>
-        <input
-          class="w-full rounded px-3 py-2 text-gray-800"
-          id="name"
-          name="Họ và Tên"
-          placeholder="Nhập họ và tên của bạn"
-          required
-          type="text"
-        />
-      </div>
-      <div>
-        <label class="block mb-1 font-semibold" for="phone">Số Điện Thoại</label>
-        <input
-          class="w-full rounded px-3 py-2 text-gray-800"
-          id="phone"
-          name="Số Điện Thoại"
-          placeholder="Nhập số điện thoại"
-          required
-          type="tel"
-        />
-      </div>
-      <div>
-        <label class="block mb-1 font-semibold" for="message">Nội Dung</label>
-        <textarea
-          class="w-full rounded px-3 py-2 text-gray-800"
-          id="message"
-          name="Nội Dung"
-          placeholder="Nhập nội dung liên hệ"
-          required
-          rows="4"
-        ></textarea>
-      </div>
-      <div class="text-center">
-        <button
-          class="bg-white text-blue-700 font-bold px-6 py-3 rounded shadow hover:bg-gray-100 transition"
-          type="submit"
-        >
-          Gửi Liên Hệ
-        </button>
-      </div>
-    </form>
-  </section>
+
+
+    <!-- Họ và Tên -->
+    <div>
+      <label class="block mb-1 font-semibold" for="name">Họ và Tên</label>
+      <input
+        type="text"
+        id="name"
+        name="Họ và Tên"
+        placeholder="Nhập họ và tên của bạn"
+        required
+        class="w-full rounded px-4 py-2 text-gray-900"
+      />
+    </div>
+
+    <!-- Email (chỉ Gmail) -->
+    <div>
+      <label class="block mb-1 font-semibold" for="email">Email (Gmail)</label>
+      <input
+        type="email"
+        id="email"
+        name="Email"
+        placeholder="email@gmail.com"
+        pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+        title="Chỉ chấp nhận địa chỉ email @gmail.com"
+        required
+        class="w-full rounded px-4 py-2 text-gray-900"
+      />
+    </div>
+
+    <!-- Số Điện Thoại (10 số) -->
+    <div>
+      <label class="block mb-1 font-semibold" for="phone">Số Điện Thoại</label>
+      <input
+        type="tel"
+        id="phone"
+        name="Số Điện Thoại"
+        placeholder="Nhập số điện thoại 10 chữ số"
+        pattern="^[0-9]{10}$"
+        title="Số điện thoại phải gồm đúng 10 chữ số"
+        required
+        class="w-full rounded px-4 py-2 text-gray-900"
+      />
+    </div>
+
+    <!-- Nội Dung -->
+    <div>
+      <label class="block mb-1 font-semibold" for="message">Nội Dung</label>
+      <textarea
+        id="message"
+        name="Nội Dung"
+        placeholder="Nhập nội dung liên hệ"
+        rows="4"
+        required
+        class="w-full rounded px-4 py-2 text-gray-900"
+      ></textarea>
+    </div>
+
+    <!-- Nút Gửi -->
+    <div class="text-center">
+      <button
+        type="submit"
+        class="bg-white text-blue-700 font-bold px-6 py-3 rounded-full shadow hover:bg-gray-100 transition duration-300"
+      >
+        Gửi Liên Hệ
+      </button>
+    </div>
+  </form>
+</section>
+
+
   <!-- Mobile main menu overlay -->
   <div
     aria-hidden="true"
@@ -1004,14 +810,7 @@
           >BLOG</a
         >
       </li>
-      <li>
-        <a
-          class="block px-3 py-2 rounded bg-blue-600 text-white text-center rounded-full"
-          href="#dangky"
-          style="border-radius: 99px"
-          >Đăng Ký</a
-        >
-      </li>
+   
     </ul>
   </nav>
   <footer
@@ -1029,22 +828,18 @@
           <li class="flex items-start space-x-2">
             <i class="fas fa-home mt-1"></i>
             <span>
-              242/36 Trịnh Thị Dối, Ấp 5, Xã Đông Thạnh, Huyện Hóc Môn, Thành
-              Phố Hồ Chí Minh, Việt Nam
+              240 Thôn Thần, Xã Ứng Hoà, Hà Nội
             </span>
           </li>
           <li class="flex items-center space-x-2">
             <i class="fas fa-phone-alt"></i>
-            <span>Hotline: 0868 404068</span>
+            <span>Hotline: 0986 850 839</span>
           </li>
           <li class="flex items-center space-x-2">
             <i class="fas fa-envelope"></i>
-            <span>Email: khuonmaunhanhung@gmail.com</span>
+            <span>Email: Tranductiep23986@gmail.com</span>
           </li>
-          <li class="flex items-center space-x-2">
-            <i class="fas fa-check"></i>
-            <span>MST: 0317571154</span>
-          </li>
+       
         </ul>
       </div>
       <div>
@@ -1062,7 +857,7 @@
             <a
               href="https://khuonmaunhanhung.com/khuon-dao"
               class="hover:text-white transition"
-              >Khuôn Dao Dập</a
+              >Khuôn Dao</a
             >
           </li>
           <li>
@@ -1103,25 +898,14 @@
         </ul>
       </div>
       <div>
-        <h3 class="text-white font-semibold mb-3 text-lg">BẢN ĐỒ</h3>
-        <hr class="border-gray-700 mb-4" />
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d875.3487457737225!2d179.99935492849147!3d28.647889755013363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e991257c962c443%3A0xbf7e5458e2156e14!2zS2h1w7RuIE3huqt1IE5ow6JuIEjGsG5n!5e0!3m2!1svi!2s!4v1719809361945!5m2!1svi!2s"
-          width="100%"
-          height="250"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Bản đồ vị trí công ty Khuôn Mẫu Nhân Hưng"
-        ></iframe>
+       <img src="https://minhtiepkhuondao.github.io/minhtiepkhuondao/logo%20bu.png" alt="">
       </div>
     </div>
     <div
       class="bg-gray-800 text-gray-400 text-center py-4 text-sm"
       aria-label="Copyright"
     >
-      Copyright 2020 - 2025 © <strong>Khuôn Mẫu Nhân Hưng</strong>
+      Copyright 2025 © <strong>Minh Tiệp Khuôn Dao</strong>
     </div>
     <a
       href="#top"
@@ -1187,6 +971,45 @@
         }
       }
     });
+  const topLink = document.getElementById("top-link");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      topLink.classList.add("show");
+    } else {
+      topLink.classList.remove("show");
+    }
+  });
+  window.addEventListener("DOMContentLoaded", () => {
+    const topBar = document.getElementById("top-bar");
+    setTimeout(() => {
+      topBar.style.opacity = '1';
+      topBar.style.transform = 'translateY(0)';
+    }, 300);
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const section = document.getElementById("intro-section");
+
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top < window.innerHeight &&
+        rect.bottom > 0
+      );
+    }
+
+    function handleScroll() {
+      if (isInViewport(section)) {
+        section.classList.add("opacity-100", "translate-y-0");
+      }
+    }
+
+    // Kiểm tra ngay khi tải
+    handleScroll();
+
+    // Lắng nghe khi cuộn
+    window.addEventListener("scroll", handleScroll);
+  });
   </script>
 </body>
 </html>
